@@ -1,0 +1,93 @@
+Código 1 area retangular
+def calcular_area(base, altura):
+    return base * altura
+
+def calcular_perimetro(base, altura):
+    return 2 * (base + altura)
+
+# Entrada do usuário
+base = float(input("Digite a base da sala (em metros): "))
+altura = float(input("Digite a altura da sala (em metros): "))
+
+# Cálculo
+area = calcular_area(base, altura)
+perimetro = calcular_perimetro(base, altura)
+
+# Saída dos resultados
+print(f"\nÁrea da
+
+Código 2 sorveteria
+class Sorvete:
+    def __init__(self, sabor, preco):
+        self.sabor = sabor
+        self.preco = preco
+
+    def __str__(self):
+        return f"{self.sabor} - R$ {self.preco:.2f}"
+
+
+class Sorveteria:
+    def __init__(self):
+        self.menu = [
+            Sorvete("Chocolate", 5.00),
+            Sorvete("Morango", 4.50),
+            Sorvete("Baunilha", 4.00),
+            Sorvete("Flocos", 5.50),
+            Sorvete("Napolitano", 6.00)
+        ]
+
+    def exibir_menu(self):
+        print("\n--- MENU DA SORVETERIA ---")
+        for idx, sorvete in enumerate(self.menu, 1):
+            print(f"{idx}. {sorvete}")
+
+    def escolher_sorvete(self):
+        self.exibir_menu()
+        try:
+            escolha = int(input("\nDigite o número do sorvete que deseja comprar: "))
+            if 1 <= escolha <= len(self.menu):
+                print(f"\n✅ Você escolheu {self.menu[escolha - 1].sabor}! Aproveite seu sorvete! 🍦")
+            else:
+                print("Número inválido! Tente novamente.")
+        except ValueError:
+            print("Entrada inválida! Digite um número correspondente ao menu.")
+
+    def iniciar(self):
+        while True:
+            print("\n--- SORVETERIA ---")
+            print("1. Exibir menu")
+            print("2. Escolher um sorvete")
+            print("3. Sair")
+            
+            opcao = input("Escolha uma opção: ")
+
+            if opcao == "1":
+                self.exibir_menu()
+            elif opcao == "2":
+                self.escolher_sorvete()
+            elif opcao == "3":
+                print("Encerrando o sistema...")
+                break
+            else:
+                print("Opção inválida! Tente novamente.")
+
+
+if __name__ == "__main__":
+    sorveteria = Sorveteria()
+    sorveteria.iniciar()
+
+código 3 banco hotel
+# Solicita o nome do hotel
+hotel = input("Digite o nome do hotel: ")
+
+# Solicita ao usuário a quantidade de dólares guardados
+dolares = float(input("Digite a quantidade de dólares no cofre do hotel: "))
+
+# Solicita a cotação do dólar no dia
+cotacao = float(input("Digite a cotação do dólar hoje: "))
+
+# Calcula o valor em reais
+valor_reais = dolares * cotacao
+
+# Exibe o resultado
+print(f"\nNo hotel {hotel}, o valor correspondente em reais é: R$ {valor_reais:.2f}")
